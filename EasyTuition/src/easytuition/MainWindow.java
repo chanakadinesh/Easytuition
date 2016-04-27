@@ -5,6 +5,8 @@
  */
 package easytuition;
 
+import Panels.AddStudents;
+import Panels.StartPanel;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -34,6 +36,11 @@ public class MainWindow extends javax.swing.JFrame {
        // setExtendedState(MAXIMIZED_BOTH);
         //setSize(Window.WIDTH,Window.HEIGHT);
        // pack();
+        MainCardLayout.add(new AddStudents(),"addStudent");
+        MainCardLayout.add(new StartPanel(),"welcomePanel");
+        CardLayout cards=(CardLayout) MainCardLayout.getLayout();
+        cards.show(MainCardLayout,"welcomePanel" );
+        
     }
 
     /**
@@ -265,7 +272,8 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //AddStudentPanel.setLayout(new java.awt.BorderLayout());
-        
+        CardLayout cards=(CardLayout) MainCardLayout.getLayout();
+        cards.show(MainCardLayout,"addStudent" );
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
